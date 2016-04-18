@@ -1,87 +1,94 @@
-
-<!DOCTYPE html>
 <html>
     <head>
         <title>cadastro</title>     
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="icon" href="imagens/Sub-logoPrefeitura.png">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="icon" href="../imagens/Sub-logoPrefeitura.png">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="css/validate.css">
+        <link rel="stylesheet" href="../css/validate.css">
 
-        <script src="js/jquery.min.js" type="text/javascript"></script>
-        <script src="js/jquery.validate.js" type="text/javascript"></script> 
+        <script src="../js/jquery.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.validate.js" type="text/javascript"></script> 
 
     </head>
-
+        
     <body>
-        <img src="imagens/Logo1-Prefeitura.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236">
-        <div class="container">
+        <div class="container" style="margin: 5%;">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-2">
 
-            <form role="form" class="validate" action="Controle/ControleUsuario.php" method="post" >
 
-                <div class="form-group">
-                    <p>
-                        <label>Nome completo: </label>
-                        <input type="text" name="nome" id="nome" class="form-control required" minlength="5" />
-                        <span>Informe seu nome completo</span>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"style="text-align: center;">Cadastro de Usuário</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form action="../Controle/ControleUsuario.php"  method="post" class="validate form-horizontal">
 
-                    </p> 
-                </div>
-                <div class="form-group">
-                    <p>
-                        <label>Nome Secretária: </label>
-                        <input type="text" name="secretaria" id="nome" class="form-control required" minlength="5" />
-                        <span>Informe nome da secretária</span>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="name">
+                                        Nome Completo </label>
+                                    <div class="col-sm-6">
+                                        <input  type="text" name="nome" id="nome" class="form-control required"  minlength="5" />
+                                        <span class="inv">Digite o nome</span>
 
-                    </p> 
-                </div>
-                <div class="form-group">
-                    <p>
-                        <label>CPF: </label>
-                        <input type="text" name="cpf" id="cpf" class="form-control required cpf" minlength="5" />
-                        <span>Campo requerido, informe um CPF válido</span>
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="name">
+                                        Nome da Secretária </label>
+                                    <div class="col-sm-6">
+                                        <input  type="text" name="secretaria" id="nome" class="form-control required"  minlength="5" />
+                                        <span class="inv">Digite o nome da Secretária</span>
 
-                    </p> 
-                </div>
-                <div class="form-group">
-                    <p>
-                        <label>Nome Secretario(a) Responsável: </label>
-                        <input type="text" name="secretario" id="nome" class="form-control required" minlength="5" />
-                        <span>Informe nome do secretario</span>
-                    </p> 
-                </div>
-                <div class="form-group">
-                    <p>
-                        <label>Telefone: </label>
-                        <input type="text" name="telefone" id="fone" class="form-control required fone"/>
-                        <span>Informe seu telefone com DDD</span>
-                    </p> 
-                </div>
-                <div class="form-group">
-                    <p>
-                        <label>Email: </label>
-                        <input type="text" name="email" id="email" class="form-control required email"/>
-                        <span>Campo requerido, informe um e-mail válido</span>                
-                    </p> 
-                </div>
-                <p>
-                    <button class="button blue submit">Cadastrar</button>
-                    <button class="button gray reset">Limpar</button>
-                </p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="lastname1">CPF</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control required cpf" id="cpf" name="cpf"  minlength="5" />
+                                        <span class="inv">Campo requerido, informe um CPF válido</span>
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="name">
+                                        Nome do Secretario(a) Responsável </label>
+                                    <div class="col-sm-6">
+                                        <input  type="text" name="secretario" id="nome" class="form-control required"  minlength="5" />
+                                        <span class="inv">Digite o nome do Secretario</span>
 
-            </form>
- <p><a href="index.php">voltar a página anterior</a></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="email1">Email</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control required email" id="email" name="email" />
+                                        <span class="inv">Informe um e-mail válido</span>                
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="username1">Telefone</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control required fone" id="fone" name="telefone" placeholder="Username" />
+                                        <span class="inv">Informe telefone com DDD</span>
+
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="col-sm-9 col-sm-offset-3">
+                                        <button type="submit" class="btn btn-primary" name="signup1" value="Sign up">Cadastrar</button>
+                                        <a href="../index.php" class="btn btn-default">Cancelar</a>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <img src="imagens/Sub-logoPrefeitura.png" class="img-circle direito-inferior"> 
-    </body>
-    <style>
-        .direito-inferior{ 
-            position:relative;
-            float:right;
-            width:162px;
-            height:161px; 
-        }
-    </style>
-</html>
 
+    </body>
+</html>

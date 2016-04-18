@@ -3,7 +3,7 @@
 define('SERVIDOR','localhost');
 define('USUARIO','root');
 define('SENHA','ipv9');
-define('BANCO','cadastro');
+define('BANCO','cadastroUsuarios');
 
 $con = new mysqli(SERVIDOR,USUARIO,SENHA,BANCO);
 if(mysqli_connect_errno()){

@@ -1,0 +1,58 @@
+*, html{ font-family: Helvetica, arial, sans-serif; margin: 0 0; padding: 0 0; }
+body{ margin: 0 0; padding: 0 0; background-color:#D6D1CA; }
+h1{ color: #594A40; letter-spacing:-2px ;text-align:center;font-size:46px;font-family:Helvetica, arial,sans-serif;text-transform:uppercase;margin:30px 0 0;}
+div#container{ margin: 0 auto; width:960px; }
+
+p{ margin: 10px 10px; }
+ul#produtos{ list-style:none; }
+div#carrinho-top{
+    background-color: #C92D21;
+    width: 960px;
+    color: #fff;
+    border-bottom:1px dashed #fff;
+    opacity: .8;
+    position:relative;
+}
+div#carrinho-info{ padding: 10px; }
+div#carrinho-container{
+    height:240px;
+    position:absolute;
+    width:240px;
+    background-color:#fff;
+    border:2px solid #c92d21;
+    display:none;
+}
+div#carrinho-container ul{ overflow:auto; height:200px; margin: 10px; list-style:none; }
+div#carrinho-container ul li{ color:#333; font-size:12px; border-bottom:1px dotted #ccc; text-align:center; margin:10px; }
+
+ul#produtos li{
+    float: left;
+    background-color:#fff;
+    -moz-box-shadow: 5px 5px 5px #ccc;
+    -webkit-box-shadow: 5px 5px 5px #ccc;
+    box-shadow: 5px 5px 5px #ccc;
+    padding:10px;
+    margin:15px;
+    width:270px;
+    text-align:center;
+}
+ul#produtos li h3{
+    margin: 6px 0 6px 0;
+    color: #594A40;
+    background-color:#f2f2f2;
+    padding:6px;
+}
+p.preco-de{
+    color:red;
+    text-decoration:line-through;
+    font-size:11px;
+}
+p.preco-por{
+    color: #594A40;
+    font-weight:900;
+}
+.ui-state-hover{
+    height:160px;
+    border:4px dashed #000;
+}
+

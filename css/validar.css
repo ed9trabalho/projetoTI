@@ -1,0 +1,25 @@
+
+
+.validate .invalid
+{
+    border:1px solid red;
+    -moz-box-shadow: 0 0 3px red;
+    -webkit-box-shadow: 0 0 3px red;
+    box-shadow: 0 0 3px red;  
+    border-radius:4px; 
+    -moz-border-radius:4px;
+    background: url(../images/error.png) no-repeat right;
+
+}
+.validate .valid
+{
+    background: url(../images/success.png) no-repeat right;  
+}
+
+.validate  .inv
+{
+    border:0px solid red;
+    color:red;
+    font-size: 11px;    
+    display:block;
+}

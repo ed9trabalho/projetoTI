@@ -46,7 +46,7 @@ include '../Pesistencia/UsuarioDAO.php';
             $resultado = UsuarioDAO::listaUsuarios($con);
         } elseif (is_string($nome)) {
             if (UsuarioDAO::buscaNomeUsuario($nome, $con)) {
-                $sql = "SELECT * FROM usuarios WHERE nome = '$nome';";
+                $sql = "SELECT * FROM usuario WHERE nome = '$nome';";
                 $resultado = mysqli_query($con, $sql);
             } else {
                 global $var;
@@ -73,7 +73,7 @@ include '../Pesistencia/UsuarioDAO.php';
 
         if (is_numeric($quant) && $quant > 0) {
             if (UsuarioDAO::buscaquantidade($quant, $con)) {
-                $sql = "SELECT * FROM usuarios ORDER BY nome LIMIT $quant";
+                $sql = "SELECT * FROM usuario ORDER BY nome LIMIT $quant";
                 $resultado = mysqli_query($con, $sql);
             } else {
                 global $var2;
@@ -101,7 +101,7 @@ include '../Pesistencia/UsuarioDAO.php';
             $resultado = UsuarioDAO::listaUsuarios($con);
         } elseif (is_numeric($id) && $id > 0) {
             if (UsuarioDAO::buscaId($id, $con)) {
-                $sql = "SELECT * FROM usuarios WHERE cod_usuario = $id";
+                $sql = "SELECT * FROM usuario WHERE cod_usuario = $id";
                 $resultado = mysqli_query($con, $sql);
             } else {
                 global $var3;
@@ -130,7 +130,7 @@ include '../Pesistencia/UsuarioDAO.php';
             $resultado = UsuarioDAO::listaUsuarios($con);
         } elseif (is_numeric($ids) && $ids > 0) {
             if (UsuarioDAO::buscaUltmosIds($ids, $con)) {
-                $sql = "SELECT * FROM usuarios ORDER BY cod_usuario DESC LIMIT $ids";
+                $sql = "SELECT * FROM usuario ORDER BY cod_usuario DESC LIMIT $ids";
                 $resultado = mysqli_query($con, $sql);
             } else {
                 global $var4;

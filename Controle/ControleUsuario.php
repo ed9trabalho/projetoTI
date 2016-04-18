@@ -27,7 +27,7 @@
     $UsuarioDAO = new UsuarioDAO();
     $UsuarioDAO->inserirUsuario($usuario,$con);
     
-    echo "<h2> cadastro realizado com sucesso</h2>"
+    header("location:../Visao/CadastroUsuario.php")
      
      
 ?>

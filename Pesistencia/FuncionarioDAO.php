@@ -6,7 +6,7 @@
 class FuncionarioDAO {
     public static function validarLogin($login,$senha, mysqli $con){
        
-        $sql = "SELECT login,senha FROM funcionario WHERE login= ? AND senha= ?";
+        $sql = "SELECT email,senha FROM funcionario WHERE email= ? AND senha= ?";
         $stm = $con->prepare($sql) or dir(mysql_error());
         $stm->bind_param("ss", $login, $senha);
         $stm->execute();   

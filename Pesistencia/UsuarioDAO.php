@@ -8,7 +8,7 @@ include '../Modelo/Usuario.class.php';
 class UsuarioDAO {
 
     public function inserirUsuario(Usuario $usuario, mysqli $con) {
-        $sql = "insert into usuarios(nome,secretaria,cpf,secretario,
+        $sql = "insert into usuario(nome,secretaria,cpf,secretario,
                telefone,email) values (?,?,?,?,?,?)";
         $nome = $usuario->getNome();
         $secretaria = $usuario->getSecretaria();
@@ -22,7 +22,7 @@ class UsuarioDAO {
     }
 
     public static function atualizarUsuario($nome, $secretaria, $cpf, $secretario, $telefone, $email, $id, mysqli $con) {
-        $sql = "update usuarios set nome = ?,secretaria = ?,cpf = ?,secretario = ?,telefone = ?,email = ? where cod_usuario = ?";
+        $sql = "update usuario set nome = ?,secretaria = ?,cpf = ?,secretario = ?,telefone = ?,email = ? where cod_usuario = ?";
         $stm = $con->prepare($sql);
         $stm->bind_param("ssssssi", $nome, $secretaria, $cpf, $secretario, $telefone, $email, $id);
         $stm->execute();
@@ -30,7 +30,7 @@ class UsuarioDAO {
 
     public static function EditarUsuario($id, mysqli $con) {
         $sql = $con->prepare("select cod_usuario,nome,secretaria,cpf,secretario,"
-                . "telefone,email from usuarios where cod_usuario=?");
+                . "telefone,email from usuario where cod_usuario=?");
         $sql->bind_param("i", $id);
         $sql->execute();
         $sql->bind_result($cod_usuario,$nome, $secretaria, $cpf, $secretario, $telefone, $email);
@@ -42,7 +42,7 @@ class UsuarioDAO {
 
     public function visualizarUsuario($id, $con) {
         $sql = $con->prepare("select cod_usuario,nome,secretaria,cpf,secretario,"
-                . "telefone,email from usuarios where cod_usuario=?");
+                . "telefone,email from usuario where cod_usuario=?");
         $sql->bind_param("i", $id);
         $sql->execute();
         $sql->bind_result($cod_usuario,$nome, $secretaria, $cpf, $secretario, $telefone, $email);
@@ -53,20 +53,20 @@ class UsuarioDAO {
     }
 
     public static function ExcluirUsuario($id, mysqli $con) {
-        $sql = "DELETE FROM usuarios WHERE cod_usuario =?";
+        $sql = "DELETE FROM usuario WHERE cod_usuario =?";
         $stm = $con->prepare($sql);
         $stm->bind_param('i', $id);
         $stm->execute();
     }
 
        public static function listaUsuarios(mysqli $con) {
-        $sql = "SELECT * FROM usuarios ORDER BY cod_usuario LIMIT 10";
+        $sql = "SELECT * FROM usuario ORDER BY cod_usuario LIMIT 10";
         $resultado = mysqli_query($con, $sql);
         return $resultado;
     }
 
     public static function buscaNomeUsuario($nome, mysqli $con) {
-         $sql = "SELECT nome FROM usuarios WHERE nome = '$nome'";
+         $sql = "SELECT nome FROM usuario WHERE nome = '$nome'";
         $stm = mysqli_query($con, $sql);
         $row = $stm->num_rows;
 
@@ -78,7 +78,7 @@ class UsuarioDAO {
     }
 
     public static function buscaquantidade($quant, mysqli $con) {
-        $sql = "SELECT * FROM usuarios ORDER BY nome LIMIT $quant";
+        $sql = "SELECT * FROM usuario ORDER BY nome LIMIT $quant";
         $resultado = mysqli_query($con, $sql);
         $res = $resultado->num_rows;
         if ($res > 0) {
@@ -92,7 +92,7 @@ class UsuarioDAO {
 
 
     public static function buscaId($id, mysqli $con) {
-        $sql = "SELECT * FROM usuarios WHERE cod_usuario = $id";
+        $sql = "SELECT * FROM usuario WHERE cod_usuario = $id";
         $stm = mysqli_query($con, $sql);
         $row = mysqli_num_rows($stm);
         if ($row > 0) {
@@ -102,7 +102,7 @@ class UsuarioDAO {
         }
     }
      public static function buscaUltmosIds($id, mysqli $con) {
-        $sql = "SELECT * FROM usuarios ORDER BY cod_usuario DESC LIMIT $id";
+        $sql = "SELECT * FROM usuario ORDER BY cod_usuario DESC LIMIT $id";
         $stm = mysqli_query($con, $sql);
         $row = mysqli_num_rows($stm);
         if ($row > 0) {
