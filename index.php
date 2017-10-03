@@ -24,12 +24,6 @@
     <div style="text-align:center;" >
         <a class="btn btn-large btn-primary" href="Visao/login.php">LOGIN</a>
     </div>
-</nav>
-        <nav class="navbar navbar-default navbar-static-top">
-    <div style="text-align:center;" >
-        <a class="btn btn-large btn-primary" href="Visao/teste.php">teste</a>
-    </div>
-</nav>
 </body>
 <footer>
 

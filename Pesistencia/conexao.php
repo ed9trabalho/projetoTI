@@ -1,9 +1,9 @@
 <?php
 
 define('SERVIDOR','localhost');
-define('USUARIO','root');
-define('SENHA','ipv9');
-define('BANCO','cadastroUsuarios');
+define('USUARIO','');
+define('SENHA','');
+define('BANCO','');
 
 $con = new mysqli(SERVIDOR,USUARIO,SENHA,BANCO);
 if(mysqli_connect_errno()){
